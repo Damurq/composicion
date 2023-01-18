@@ -7,9 +7,10 @@ n = input('Ingresa el número de variables aleatorias a generar: ');
 % Ingresa los parametros de la distribución
 params_str = input('Ingresa los parametros de la distribución separados por comas: ','s');
 params = str2num(params_str); % convierte los parametros en un vector de numeros
+params_str = strrep(mat2str(params), ' ', ','); % convierte el vector de parametros en una cadena de caracteres
 
 % Genera la función inversa de la FDP
-FDP_inv = inline(['fsolve(''' FDP '-x'',x,''Algorithm'',''brent'',''Options'',optimset(''TolX'',1e-6,''TolFun'',1e-6,''MaxIter'',10000,''MaxFunEvals'',10000),''params'',' num2str(params) ')'], 'x');
+FDP_inv = inline(['fsolve(''' FDP '-x'',x,''Algorithm'',''brent'',''Options'',optimset(''TolX'',1e-6,''TolFun'',1e-6,''MaxIter'',10000,''MaxFunEvals'',10000),''params'',' params_str ')'], 'x');
 
 % Genera las variables aleatorias no uniformes
 X = zeros(1,n);

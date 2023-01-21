@@ -1,5 +1,6 @@
 function output = cumulativeDistributionFunction(fun, value)
     variables = symvar(fun);
     I = int(fun,variables);
-    output = I - subs(I, variables, value);
+    var = symvar(I);
+    output = I - subs(I, var, value);
 end

@@ -1,4 +1,4 @@
-function menu()
+C:\Users\User\Documents\UCLA\Semestre 9\Investigacion de operaciones 3\Corte 3\method\composicionfunction menu()
     while true
         clc
         fprintf('\nMenu de opciones\n');

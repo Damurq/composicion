@@ -18,7 +18,7 @@ function x_a = composition(n, F1, F2)
 
         x_a(i) = x;
     end
-
+    disp(x_a);
     subplot(2, 1, 1);
     plot(x_a);
     subplot(2, 1, 2);
